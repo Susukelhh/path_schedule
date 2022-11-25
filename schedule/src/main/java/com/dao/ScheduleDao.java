@@ -18,6 +18,10 @@ public interface ScheduleDao {
     //根据id查询任务分配情况
     @Select("select * from schedule where id = #{id}")
     Schedule selectScheduleById(Integer id);
+    
+    //查询1号任务分配情况
+    @Select("select * from schedule where id = 1")
+    Schedule selectScheduleNumber();
 
     //插入新的任务分配情况
     @Insert("insert into schedule(id,firstTasks,firstPrice) values (#{id},#{firstTasks},#{firstPrice})")
